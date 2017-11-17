@@ -147,7 +147,7 @@ def parse_line(options, line):
     return millisecond
 
 if __name__=='__main__':
-    parser = OptionParser(usage="%prog -d -p pid -t interval")
+    parser = OptionParser(usage="%prog -d -i ip -t times -r interval")
     parser.add_option('-d', '--debug', dest="debug", action='store_true', default=False,
                           help="Print out debugging information")
     parser.add_option('-i', '--ip', dest="device_ip",
