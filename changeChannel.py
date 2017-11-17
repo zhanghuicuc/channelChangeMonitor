@@ -231,11 +231,12 @@ if __name__=='__main__':
     startTimeAvg = 0
     overallTimeAvg = 0
     for i in range(len(Stats)):
-        print '%d       %4d        %4d        %4d        %4d' % (i, Stats[i].getReleaseTime(), Stats[i].getPrepareTime(), Stats[i].getStartTime(), Stats[i].getOverallTime())
-        releaseTimeAvg = releaseTimeAvg + Stats[i].getReleaseTime()
-        prepareTimeAvg = prepareTimeAvg + Stats[i].getPrepareTime()
-        startTimeAvg = startTimeAvg + Stats[i].getStartTime()
-        overallTimeAvg = overallTimeAvg + Stats[i].getOverallTime()
+        if(Stats[i].getReleaseTime() > 0):
+            print '%2d      %4d        %4d        %4d        %4d' % (i, Stats[i].getReleaseTime(), Stats[i].getPrepareTime(), Stats[i].getStartTime(), Stats[i].getOverallTime())
+            releaseTimeAvg = releaseTimeAvg + Stats[i].getReleaseTime()
+            prepareTimeAvg = prepareTimeAvg + Stats[i].getPrepareTime()
+            startTimeAvg = startTimeAvg + Stats[i].getStartTime()
+            overallTimeAvg = overallTimeAvg + Stats[i].getOverallTime()
     print 'avg     %4d        %4d        %4d        %4d' % (releaseTimeAvg/len(Stats), prepareTimeAvg/len(Stats), startTimeAvg/len(Stats), overallTimeAvg/len(Stats))
 
     sys.exit("Finished")
